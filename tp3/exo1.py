@@ -130,14 +130,30 @@ class Tas:
         return ret
 
 
-#    def heap_sort():
+    def heap_sort(self):
+        l=[]
+   
+        for a in range(0,len(self.tab)):
+            self.swap(0,len(self.tab)-1)
+            l.append(self.tab.pop())
+            self.down_heat(0);
         
+        return l
+
+    def heap_sort_s(self):
+        
+        for a in range(len(self.tab),0,-1):
+            self.swap(0,a-1)
+            self.down_heat(0);
+        
+        return self.tab
+
 
     
 if __name__ == '__main__':
     # test simple
     h = Tas(5)
-    import random
+    random
     [h.insert(random.randint(0,1000)) for a in range(0,1000)]
     print(h)
     
