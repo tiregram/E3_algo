@@ -30,6 +30,8 @@ if __name__ == '__main__':
     for i in range(0,1000):
         element_non_order.append(random.randint(0,10000))
 
+    print(element_non_order)
+        
     #test trie
     element_order = bubble_sort(element_non_order)
-    
+    print(element_order)

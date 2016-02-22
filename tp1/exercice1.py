@@ -59,13 +59,25 @@ class Fraction:
         self.reduce()
         return str(self.nume) + "/" + str(self.demo);
             
+
+    
+if __name__ == '__main__':
+    f1 = Fraction(100,85)
+    print(f1.PGCD())
+    print(f1.PGCDrecursif())
+    f1.reduce()
+    print(f1)
+    
+    f2 = Fraction(18,3) 
+    print(f2.PGCD())
+    print(f2.PGCDrecursif())
+    f2.reduce()
+    print(f2)
     
 
-f = Fraction(100,85)
-
-print(f.PGCD())
-print(f.PGCDrecursif())
-
-
-
-
+    f3 = Fraction(19231300,4324250) 
+    print(f3.PGCD())
+    print(f3.PGCDrecursif())
+    f3.reduce()
+    print(f3)
+    

@@ -97,12 +97,8 @@ class Contener:
     prev = None
     value = None
     
-if __name__ == '__main__':
-    a = Deque('a')
-    print(a.is_palindrome())
-    a.addString(" baHH non")
-    a.remove(" ")
-    a.aply_a_lambda(lambda v : v.lower())
-    print(a)
-    for b in a:
-        print(b)
+
+    
+    
+    
+    

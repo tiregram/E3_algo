@@ -1,5 +1,5 @@
 
-def tri_fusion(liste):
+def fusion_sort(liste):
 
     taille =len(liste)
 
@@ -7,22 +7,49 @@ def tri_fusion(liste):
     if taille == 0 or taille == 1 :
         return liste
     else:
-        return fusion(tri_fusion(liste[0:taille//2]),tri_fusion(liste[taille//2:taille]))
+        return fusion(fusion_sort(liste[0:taille//2]),fusion_sort(liste[taille//2:taille]))
 
 def fusion(liste1,liste2):
-    # si la liste 1 est vide on retourne liste 2
-    if liste1==[]:
+    l = []
+    
+    if liste1 == None or len(liste1)==0:
         return liste2
-    elif liste2==[]: # inversement 
+    
+    if liste2 == None or len(liste2)==0:
         return liste1
-    else: # on refusione la liste en insérant  un element de la liste2
-        return fusion(liste1[1:len(liste1)],insere(liste1[0],liste2))
 
-def insere(x,liste):
-    if liste==[]:
-        return [x]
-    elif x<=liste[0]: 
-        return [x] + liste
-    else:# si la liste est sup on recomence avec les element suivant de la liste
-        return [liste[0]] + insere(x,liste[1:len(liste)])
+    a = liste1.pop(0)
+    b = liste2.pop(0)
+    
+    while True:
+        if b < a:
+            l.append(b)
+            if len(liste2) == 0:
+                l = l + [a] +liste1
+                break;
+            else:
+                b = liste2.pop(0)
+        else:
+            l.append(a)
+            if len(liste1) == 0:
+                l = l + [b] + liste2
+                break;
+            else:
+                a = liste1.pop(0)
 
+
+    return l
+
+import random
+
+if __name__ == '__main__':
+    # creation du tableau
+    element_non_order =[]
+    for i in range(0,10000):
+        element_non_order.append(random.randint(0,10000))
+
+
+
+    element_order = fusion_sort(element_non_order)
+    
+    print(element_order)

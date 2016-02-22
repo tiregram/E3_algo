@@ -1,0 +1,47 @@
+import random
+from datetime import datetime
+from fusion_sort import fusion_sort
+from bubble_sort import bubble_sort
+from matplotlib import pl
+
+
+if __name__ == '__main__':
+    val = 10
+    inc = 10
+    time_bubble = []
+    time_fusion = []
+    
+    
+    for a in range(1,5):
+        copy1 = []
+
+        for i in range(0,val):
+            copy1.append(random.randint(0,val))
+            
+        
+        copy2 = copy1[:]
+        
+        time = datetime.now()
+        bubble_sort(copy1)
+        time = datetime.now() - time
+        time_bubble.append(time)
+        
+        time = datetime.now()
+        fusion_sort(copy2)
+        time = datetime.now() - time
+        time_fusion.append(time)
+
+        val = val * inc;
+
+    print(time_fusion)
+    print(time_bubble)
+
+
+
+
+    a = [ pow(10,i) for i in range(10) ]
+    
+    pyplot.subplot(2,1,1)
+    pyplot.plot(a, color='blue', lw=2)
+    pyplot.yscale('log')
+    pyplot.show()

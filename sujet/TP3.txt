@@ -18,6 +18,7 @@ Voir http://en.wikipedia.org/wiki/Binary_heap
 
 2- Implantez bubble sort (vu en cours). Comparer heapsort et bubble sort pour des tableaux de taille croissante entre 10 et 10^5 éléments. 
     Faire un plot log-log comparant les deux méthodes.
+    ok
 
 === Exercice 5 ===
 

@@ -3,12 +3,13 @@
 Le sujet du TP en python de ce matin, c'est de 
 
 1- Créer une classe Fraction
+ok
 2- Implémenter l'algorithme d'euclide pour trouver le PGDC (plus grand diviseur commun)
-
+ok
 Voir https://deptinfo-ensip.univ-poitiers.fr/FILES/PDF/python1a.pdf
 
 3- dans la classe fraction, implémenter les operations
-
+ok
 	addition
 	soustraction
 	multiplication
