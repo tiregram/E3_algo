@@ -4,14 +4,16 @@ Les test et exemple sont dans le if __main__
 
 ## TP2
 Les test et exemple sont dans le if __main__
-
+et les sortie dans les deux fichiers
 
 ## TP3
 Les test et exemple sont dans le if __main__
-
+ et
+ dans le fichier test.py
+ 
 ## TP4
 Les test et exemple sont dans le if __main__
-
+ et dans les autre fichier
 
 
 ## PROJET
