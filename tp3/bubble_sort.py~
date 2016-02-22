@@ -1,0 +1,22 @@
+
+
+
+def bubble_sort(element_to_order):
+    # on recup la taille
+    taille = len(element_to_order)
+
+    # on met la valeur par default
+    swapped_elements = True
+    
+    while swapped_elements == True:
+        # mise a False si il n'y a pas de changement alors exit
+        swapped_elements = False
+
+        # compare les element cote a cote avec la fonction > 
+        for i in range(0, taille-1):
+            if element_to_order[i] > element_to_order[i+1]:
+                swapped_elements = True
+                # python swap  /!\ xor can be do
+                element_to_order[i],element_to_order[i+1] = element_to_order[i+1],element_to_order[i]
+                
+    return element_to_order

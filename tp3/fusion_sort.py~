@@ -1,0 +1,26 @@
+def insere(x,liste):
+
+    if liste==[]:
+        return [x]
+    elif x<=liste[0]:
+        return [x] + liste
+    else:
+        return [liste[0]] + insere(x,liste[1:len(liste)])
+
+def fusion(liste1,liste2):
+
+    if liste1==[]:
+        return liste2
+    elif liste2==[]:
+        return liste1
+    else:
+        return fusion(liste1[1:len(liste1)],insere(liste1[0],liste2))
+
+def tri_fusion(liste):
+
+     taille =len(liste)
+
+    if taille == 0 or taille == 1 :
+        return liste
+    else:
+        return fusion(tri_fusion(liste[0:taille//2]),tri_fusion(liste[n//2:n]))

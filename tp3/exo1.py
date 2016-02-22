@@ -18,10 +18,10 @@ class Tas:
         return (2*indice+2<len(self.tab))
     
     def get_children_right_value(self,indice):
-        return self.tab[self.get_children_right_indice] if self.has_children_right(indice) else None
+        return self.tab[self.get_children_right_indice(indice)] if self.has_children_right(indice) else None
 
     def get_children_left_value(self,indice):
-        return self.tab[self.get_children_left_indice] if self.has_children_left(indice) else None
+        return self.tab[self.get_children_left_indice(indice)] if self.has_children_left(indice) else None
 
     def get_children_left_indice(self,indice):
         return 2*indice+1  
@@ -35,15 +35,20 @@ class Tas:
     def down_heat(self,indice):
         # check des valeur de base pour evité les sortie de tableau
         if(self.has_children(indice)):
+
             if self.has_children_left(indice):
+                
                 if self.get_children_left_value(indice) < self.get_value(indice):
-                    self.swap(indice,indice.get_children_left_indice)
-                    return
+                       
+                    self.swap(indice , self.get_children_left_indice(indice))
+                    
                 else :
+                    
                     return
             else:
                 return
-            
+
+
         value = self.get_value(indice)
         cr = self.get_children_right_value(indice)
         cl = self.get_children_left_value(indice)
@@ -84,7 +89,7 @@ class Tas:
         
             
     def swap(self,indice_one ,indice_two ):
-# TODO: use the xor implementation to switch
+        # TODO: use the xor implementation to switch
         valswitch = self.get_value(indice_one)
         self.tab[indice_one] = self.get_value(indice_two)
         self.tab[indice_two] = valswitch;
@@ -125,11 +130,30 @@ class Tas:
         ret += (self.str_rec(self.get_children_left_indice(indice),mess + "   |" )  if self.has_children_left(indice)  else "")
         ret += (self.str_rec(self.get_children_right_indice(indice), mess + "    ") if self.has_children_right(indice) else "")    
         return ret
+
+
+#    def heap_sort():
         
+
+    
 if __name__ == '__main__':
     h = Tas(5)
-    [h.insert(a) for a in range(0,100)]
+    [h.insert(a) for a in range(0,10)]
     print(str(h))
-    h.down_heat()
-    print(str(h))
-    
+
+    l=[]
+    print()
+    h.swap(0,len(h.tab)-1)
+    l.append(h.tab.pop())
+    h.down_heat(0)
+    print("("+str(h)+")")
+
+'''
+    list =[]
+    for a in range(10,0):
+
+        list.append(h.tab.pop())
+        h.down_heat(0);
+   ''' 
+        
+

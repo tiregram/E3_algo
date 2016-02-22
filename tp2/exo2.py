@@ -1,3 +1,6 @@
+import unicodedata
+import re
+
 class Deque:
     """ cette class implémante le concepete de liste chainé
     """
@@ -47,10 +50,12 @@ class Deque:
         come_to_last = self.last
 
         while(come_to_first != come_to_last):
+            print(str(come_to_last.value)+" =="+ str(come_to_first.value))
             if come_to_last.value != come_to_first.value:
+
                 return False
+            come_to_first = come_to_first.next
             come_to_last = come_to_last.prev
-            come_to_last = come_to_first.next
             
         return True
 
@@ -90,14 +95,43 @@ class Contener:
     next = None
     prev = None
     value = None
+
+import unicodedata
+def strip_accents(s):
+    return ''.join(c for c in unicodedata.normalize('NFD', s)
+                   if unicodedata.category(c) != 'Mn')
+
+
     
 if __name__ == '__main__':
     a = Deque('a')
-    print(a.is_palindrome())
+    a.addString('suis siusa')
+    print("palyndrome: "+str(a.is_palindrome()))
+    print(a)
+    
     a.addString(" baHH non")
     a.remove(" ")
     a.aply_a_lambda(lambda v : v.lower())
-    print(a)
+
+
+    file = open("Palindrome.txt")
+    text = file.read()
+    file.close()
+    
+    text = text.lower();
+    text = re.sub('\.|\'|,|\-|\:|\n|\t|!|\?|\(|\)| |;','',text)
+    text = strip_accents(text)
+    
+    print(text)
+#    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore" )
+    
+
+    b = Deque(text[0])
+    b.addString(text[1:])
+
+
+    print(b)
+    print(b.is_palindrome())
 
 
 

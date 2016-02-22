@@ -1,20 +1,30 @@
 === Exercice 1 ===
 	a - Ouvrir le fichier "mbox_short.txt" reçu par mail et transmis à "e3fi@esiee.fr" et afficher le nombre de caractères présents dans le fichier.
+	OK
 	b - Nettoyez un peu le fichier en retirant les ponctuations (, ; / - _) ainsi que les lettres seules (grâce aux expressions régulières).
+	OK
+	
 	c - Comptez le nombre d'occurence des différents mots du fichier nettoyé et ne retournez que les 10 mots les plus présents.
+	OK
+	
 	d - Enregistrer la liste des mails contenus dans "mbox_short.txt" (récupérés grâce aux expressions régulières) et les écrire dans un fichier "contactstp2.csv" qu'il vous faut créer et dans lequel doivent figurer (une seule fois) tous les mails (séparés par des ";")
+	OK
 	e - Effectuer le même traitement appliqué au fichier "mbox.txt" et comparez le temps de traitement de chaque fichier.
-
+	OK
+	
 === Exercice 2 === 
 
 	a - Proposer une classe de liste doublement chaînée : deque
+	OK
+	
 	b - mettre en oeuvre les méthodes suivantes
 		
 		push_first()
 		pop_first()
 		push_last()
 		pop_last()
-
+	OK
+		
 	c - Utiliser la deque pour détecter si une chaine de caractère est un palindrome. Exemple
 	
 	esoperesteicietserepose
@@ -25,14 +35,17 @@
 	ressasser
 	
 	Fournissez le code pour mettre les lettres de la chaine de caractère dans la liste doublement chaînée.
+	OK
 	
 	d - prétraiter la chaine pour enlever les espaces et tout réduire en minuscule, puis tester si la chaine est un palindrome.
 
 	Esope reste ici et ce repose
 	A man a plan a canal Panama
-
+	OK
+	
 	e - De plus enlever accents et ponctuation (virgules, points, exclamation, etc) et tester sur le texte suivant : http://home.arcor.de/jean_luc/Deutsch/Palindrome/perec.htm
-
+	OK
+	
 === Exercice 3 ===
 
 Buffer circulaire
@@ -42,8 +55,9 @@ http://en.wikipedia.org/wiki/Circular_buffer
 
 1- Mettre en oeuvre le tableau circulaire vu en cours à l'aide d'un tableau
 =======================================================
-
+ok
 a - créez une classe CircBuf
+ok
 b- prévoyez les méthodes suivantes
 
 	push_first() : insertion au début
@@ -51,20 +65,25 @@ b- prévoyez les méthodes suivantes
 	push_last() : insertion à la fin
 	pop_last() : retrait à la fin
 	erase() : effacement complet
+ok
 
 2- à la création de la classe, on demande à l'utilisateur une taille maximum.
+ok
 =========================================================
 
 	- dans un premier temps si l'utilisateur tente d'insérer un élément de trop, on retourne une erreur
+	nop
 	- dans un second temps, prévoyez le redimensionnement du tableau circulaire. Quelle est la complexité de cette opération ? Quelle stratégie de redimensionnement proposez vous ? On peut par exemple ajouter une taille fixe au tableau circulaire, ou bien doubler la taille courante. Laquelle vous paraît préférable ?
-	
+	ok
 	- prévoyez les méthodes suivantes:
-	
+	ok
 	augment() : augmente la taille du buffer d'une constante, ou double la taille 
 	shrink() : diminue la taille du buffer d'une constante, ou divise la taille par deux. 
-
+	ok	
 3- Utilisation
 =========
 
 	Prévoyez les cas d'erreur.
+	ok
 	Donnez tests de votre structure de données.
+	ok
