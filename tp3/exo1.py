@@ -12,10 +12,10 @@ class Tas:
         return self.has_children_right(indice) and self.has_children_left(indice)
 
     def has_children_right(self, indice):
-        return (2*indice+1<len(self.tab))
+        return 2 * indice + 1 < len( self.tab )  
         
     def has_children_left(self, indice):
-        return (2*indice+2<len(self.tab))
+        return 2 * indice + 2 < len( self.tab )
     
     def get_children_right_value(self,indice):
         return self.tab[self.get_children_right_indice(indice)] if self.has_children_right(indice) else None
@@ -34,10 +34,8 @@ class Tas:
 
     def down_heat(self,indice):
         # check des valeur de base pour evité les sortie de tableau
-        if(self.has_children(indice)):
-
+        if(not self.has_children(indice)):
             if self.has_children_left(indice):
-                
                 if self.get_children_left_value(indice) < self.get_value(indice):
                        
                     self.swap(indice , self.get_children_left_indice(indice))
@@ -58,11 +56,11 @@ class Tas:
             return;
 
         if( cr < cl ):
-            self.swap( indice , self.get_children_left_indice())
-            self.down_heat(self.get_children_left_indice)
+            self.swap( indice , self.get_children_left_indice(indice))
+            self.down_heat(self.get_children_left_indice(indice))
         else:
-            self.swap( indice , self.get_children_right_indice())
-            self.down_heat(self.get_children_right_indice)
+            self.swap( indice , self.get_children_right_indice(indice))
+            self.down_heat(self.get_children_right_indice(indice))
 
         return
 
@@ -137,23 +135,23 @@ class Tas:
 
     
 if __name__ == '__main__':
+    # test simple
     h = Tas(5)
-    [h.insert(a) for a in range(0,10)]
-    print(str(h))
+    import random
+    [h.insert(random.randint(0,1000)) for a in range(0,1000)]
+    print(h)
+    
 
     l=[]
-    print()
-    h.swap(0,len(h.tab)-1)
-    l.append(h.tab.pop())
-    h.down_heat(0)
-    print("("+str(h)+")")
 
-'''
-    list =[]
-    for a in range(10,0):
 
-        list.append(h.tab.pop())
+   
+    for a in range(0,len(h.tab)):
+        h.swap(0,len(h.tab)-1)
+        l.append(h.tab.pop())
         h.down_heat(0);
-   ''' 
-        
+   
+    print(l)
+
+    
 
